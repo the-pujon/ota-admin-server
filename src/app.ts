@@ -66,7 +66,7 @@ const allowedOrigins = [
   'https://admin.tripnest.net',
   'http://192.168.68.102:3000',
   'https://ota-admin-client.vercel.app',
-  'https://ota-admin-client.vercel.app/'
+  'https://ota-admin-client.vercel.app/',
   /^http:\/\/192\.168\.68\.\d+:3000$/ 
 ];
 
