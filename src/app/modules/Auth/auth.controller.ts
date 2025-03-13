@@ -51,6 +51,7 @@ const loginUser = catchAsync(async (req, res) => {
     sameSite: "none", // Change from "strict" to "none" for cross-site requests
     maxAge: 1000 * 60 * 60 * 24 * 365,
     path: "/", // Explicitly set the path
+    domain: ".vercel.app",
   });
 
   res.cookie("refreshToken", refreshToken, {
@@ -60,6 +61,7 @@ const loginUser = catchAsync(async (req, res) => {
     sameSite: "none", // Change from "strict" to "none" for cross-site requests
     maxAge: 1000 * 60 * 60 * 24 * 365,
     path: "/", // Explicitly set the path
+    domain: ".vercel.app",
   });
   res.cookie("accessToken2", accessToken, {
     secure: true,
@@ -67,6 +69,7 @@ const loginUser = catchAsync(async (req, res) => {
     sameSite: "none",
     maxAge: 1000 * 60 * 60 * 24 * 365,
     path: "/",
+    domain: ".vercel.app",
     // domain: ".vercel.app", // Specify the domain explicitly
   });
   // Add this alongside your other cookies
@@ -76,6 +79,7 @@ const loginUser = catchAsync(async (req, res) => {
     sameSite: "none",
     maxAge: 60000, // 1 minute for testing
     path: "/",
+    domain: ".vercel.app",
   });
   console.log("sending response");
 
