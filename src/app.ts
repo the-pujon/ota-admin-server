@@ -105,6 +105,21 @@ app.use(
 app.use(cookieParser());
 // application routes
 app.use('/api/v1', router);   
+
+// const cors = require("cors");
+
+// app.use(
+//   cors({
+//     origin: "https://ota-admin-client.vercel.app",
+//     credentials: true,
+//   })
+// );
+
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  next();
+});
+
 // getAllCountryNameFromAllVisaService()
 app.get('/', (req: Request, res: Response) => {
   res.send('Hi TripNest!! you are live now!!!!');
