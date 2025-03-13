@@ -102,6 +102,11 @@ app.use(
   })
 );
 
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  next();
+});
+
 app.use(cookieParser());
 // application routes
 app.use('/api/v1', router);   
@@ -115,10 +120,7 @@ app.use('/api/v1', router);
 //   })
 // );
 
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Credentials", "true");
-  next();
-});
+
 
 // getAllCountryNameFromAllVisaService()
 app.get('/', (req: Request, res: Response) => {
