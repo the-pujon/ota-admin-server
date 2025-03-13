@@ -102,25 +102,9 @@ app.use(
   })
 );
 
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Credentials", "true");
-  next();
-});
-
 app.use(cookieParser());
 // application routes
 app.use('/api/v1', router);   
-
-// const cors = require("cors");
-
-// app.use(
-//   cors({
-//     origin: "https://ota-admin-client.vercel.app",
-//     credentials: true,
-//   })
-// );
-
-
 
 // getAllCountryNameFromAllVisaService()
 app.get('/', (req: Request, res: Response) => {
